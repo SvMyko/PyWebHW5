@@ -6,16 +6,13 @@ This is a Python console utility that fetches exchange rates for specific curren
 Python 3.7 or higher
 
 **Installation:**
-Clone the repository or download the code files.
-
-**Install the required dependencies using pip:**
-pip install aiohttp
+1. Clone the repository or download the code files.
+2. Install the required dependencies using pip: _pip install aiohttp_
 
 **Usage:**
-Open a terminal or command prompt in the directory where the code is located.
+1. Open a terminal or command prompt in the directory where the code is located.
 
-Run the script using the following command:
-python PyWebHW5.py
+2. Run the script using the following command: _python PyWebHW5.py_
 
 The utility will prompt you to enter the number of days for which you want to check the exchange rates. Please enter a valid integer between 1 and 10.
 Next, you will be asked to enter the additional currencies you want to check, separated by spaces (e.g., USD EUR PLN).
