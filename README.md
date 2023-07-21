@@ -1,4 +1,4 @@
-**Exchange Rates Retrieval Tool**
+# **Exchange Rates Retrieval Tool**
 
 This is a Python console utility that fetches exchange rates for specific currencies from the PrivatBank public API for a given number of days. It utilizes the aiohttp library for asynchronous network requests to retrieve the data in parallel.
 
