@@ -2,16 +2,16 @@
 
 This is a Python console utility that fetches exchange rates for specific currencies from the PrivatBank public API for a given number of days. It utilizes the aiohttp library for asynchronous network requests to retrieve the data in parallel.
 
-**Requirements**
+**Requirements:**
 Python 3.7 or higher
 
-**Installation**
+**Installation:**
 Clone the repository or download the code files.
 
 **Install the required dependencies using pip:**
 pip install aiohttp
 
-**Usage**
+**Usage:**
 Open a terminal or command prompt in the directory where the code is located.
 
 Run the script using the following command:
