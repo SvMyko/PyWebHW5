@@ -1,6 +1,8 @@
 import aiohttp
 import asyncio
 from datetime import datetime, timedelta
+import time
+
 
 API_BASE_URL = "https://api.privatbank.ua/p24api/exchange_rates"
 
@@ -30,7 +32,10 @@ def get_date_range(days):
 
 
 def format_currency(currency_data):
-    return f"{currency_data['currency']: <8} | {currency_data['purchaseRate']: <13} | {currency_data['saleRate']: <9}"
+    currency = currency_data["currency"]
+    purchase_rate = currency_data.get("purchaseRate", currency_data.get("purchaseRateNB"))
+    sale_rate = currency_data.get("saleRate", currency_data.get("saleRateNB"))
+    return f"{currency: <8} | {purchase_rate: <13} | {sale_rate: <9}"
 
 
 def process_days_input():
@@ -101,6 +106,7 @@ def exit_handler():
         exit_handler()
     else:
         print("Exiting the program...")
+        time.sleep(3)
         exit()
 
 
