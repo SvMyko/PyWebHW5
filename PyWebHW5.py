@@ -10,6 +10,8 @@ supported_currencies = {
     "UZS", "GEL", "UAH"
 }
 
+BASE_PROMPT = f'This console utility is designed to display the exchange rate of currencies ' \
+              f'for a specified number of days. List of supported currencies: \n{", ".join(supported_currencies)}'
 
 async def fetch_exchange_rates(session, date):
     url = f"{API_BASE_URL}?date={date}"
@@ -90,6 +92,19 @@ async def main():
     except Exception as e:
         print(f"Error occurred: {e}")
 
+def exit_handler():
+    input_handler = input('Print "Continue" to continue using or push enter to close the program: ')
+
+    if input_handler.lower() == "continue":
+        print(BASE_PROMPT)
+        asyncio.run(main())
+        exit_handler()
+    else:
+        print("Exiting the program...")
+        exit()
+
 
 if __name__ == "__main__":
+    print(BASE_PROMPT)
     asyncio.run(main())
+    exit_handler()
